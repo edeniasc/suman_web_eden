@@ -1,0 +1,14 @@
+### Test GET
+GET http://localhost:3000
+
+### Tambah User
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Edenia",
+  "email": "edenia@example.com"
+}
+
+### Ambil Semua User
+GET http://localhost:3000/users

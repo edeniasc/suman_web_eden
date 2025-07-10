@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us - 수만</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #c00;
+    }
+
+    .contact-person {
+      margin-bottom: 25px;
+    }
+
+    .contact-person h2 {
+      margin-bottom: 5px;
+      color: #222;
+    }
+
+    .contact-person p {
+      margin: 0;
+    }
+
+    form {
+      margin-top: 40px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background: #c00;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a00;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>연락처</h1>
+
+    <div class="contact-person">
+      <h2>대표이사 (CEO)</h2>
+      <p><strong>이름:</strong> 임태형</p>
+      <p><strong>연락처:</strong> 010-0900-0888</p>
+      <p><strong>이메일:</strong> ceo@suman.co.kr</p>
+    </div>
+
+    <div class="contact-person">
+      <h2>상무이사</h2>
+      <p><strong>이름:</strong> 명노선</p>
+      <p><strong>연락처:</strong> 010-6338-2853</p>
+      <p><strong>이메일:</strong>nsmyoung@suman.co.kr</p>
+    </div>
+    
+    <form id="contactForm">
+      <h2>문의하기</h2>
+      <label for="name">이름</label>
+      <input type="text" id="name" name="name" required />
+      <label for="email">이메일</label>
+      <input type="email" id="email" name="email" required />
+      <label for="message">메시지</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      
+      <button type="submit">보내기</button>
+    </form>
+
+    <script>
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  try {
+    const res = await fetch('http://localhost:3000/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    if (res.ok) {
+      alert("✅ 메시지가 성공적으로 전송되었습니다!");
+      document.getElementById('contactForm').reset();
+    } else {
+      alert("❌ 오류가 발생했습니다. 다시 시도해주세요.");
+    }
+  } catch (err) {
+    alert("⚠️ 서버와 연결할 수 없습니다.");
+    console.error(err);
+  }
+});
+</script>
+
+  </div>
+</body>
+<footer>
+    <div class="container">
+      <p>© 2025 수만 Co., Ltd. 모든 권리 보유. | 서울특별시 강남구 | 연락처: 02-1234-5678</p>
+    </div>
+  </footer>
+</html>

@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  body {
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .logo a {
+    text-decoration: none;
+    color: #c00;
+  }
+  
+  
+  header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #c00;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #c00;
+  }
+  .about, .products, .solutions {
+    padding: 60px 0;
+    background-color: #fff;
+  }
+  
+  .about h2,
+  .products h2,
+  .solutions h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #c00;
+    margin-bottom: 30px;
+  }
+  
+  .about p,
+  .products p,
+  .solutions p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+  
+  .about ul,
+  .products ul,
+  .solutions ul {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .about ul li,
+  .products ul li,
+  .solutions ul li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .about ul li::before,
+  .products ul li::before,
+  .solutions ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c00;
+    font-size: 18px;
+  }
+  
+  /* GRID STYLE (optional for products/solutions) */
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .grid-item {
+    flex: 1;
+    min-width: 280px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .grid-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .grid-item h3 {
+    font-size: 20px;
+    color: #c00;
+    margin-bottom: 10px;
+  }
+  
+  .grid-item p {
+    font-size: 16px;
+  }
+  .hero {
+    background: url('bg.png') no-repeat center center/cover ;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    background: #c00;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    
+  }
+  
+  .btn:hover {
+    background: #a00;
+  }
+  
+  .solutions {
+    padding: 60px 0;
+    background: #f9f9f9;
+  }
+  
+  .solutions h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  .about {
+    padding: 60px 0;
+    background-color: #fff;
+  }
+  
+  .about h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #c00;
+    margin-bottom: 30px;
+  }
+  
+  .about p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .about ul {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .about ul li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .about ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c00;
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+  
+  .solution-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .solution-item {
+    flex: 1;
+    min-width: 280px;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .solution-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .solution-item h3 {
+    font-size: 22px;
+    color: #c00;
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    background: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+  }
+  
+  
